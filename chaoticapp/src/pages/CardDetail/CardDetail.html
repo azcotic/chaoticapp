@@ -1,0 +1,13 @@
+<ion-header-bar class="bar-stable">
+		<h1 class="title">{{cards.Name}}</h1>
+		<div class="buttons">
+    		<a href="#/Select"><button class="button" >Back</button></a>
+  		</div>
+	</ion-header-bar>
+	<ion-content class="padding" style="padding:30px;">
+	<img ng-src="src/{{cards.ImageFile}}.jpg" style="padding-bottom:10%;width:100%; height:90%;" alt="">
+	
+</ion-content>
+<ion-footer-bar class="bar-royal">	
+  <a href="#/"><div class="title" ng-click="selectedCard(idplayer,cards.Name, cards.ImageFile)">Select</div></a>
+</ion-footer-bar>

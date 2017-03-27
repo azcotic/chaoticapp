@@ -1,0 +1,19 @@
+<ion-header-bar class="bar-stable">
+		<h1 class="title">Bienvenido</h1>
+		<div class="buttons">
+    		<a href="#/"><button class="button" >Exit</button></a>
+  		</div>
+	</ion-header-bar>
+	<ion-content class="padding">
+	Seleciona una criatura 
+	<ion-item class="item-avatar" ng-repeat="player in players" ui-sref='Select({id: $index})' >
+			<img ng-src="src/{{player.img}}.jpg" alt="">
+			<h2>{{player.playername}}</h2>
+			<span>{{player.creature}}</span>
+		</ion-item>
+</ion-content>
+<ion-footer-bar class="bar-calm" align-title="right">	
+  <div class="buttons">
+    <a href="#/Duel"><button class="button right-button" ng-disabled="!((players[0].creature)&&(players[1].creature))" ng-click="startDuel()">Duel</button></a>
+  </div>
+</ion-footer-bar>

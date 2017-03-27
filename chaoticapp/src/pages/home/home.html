@@ -1,0 +1,23 @@
+<ion-header-bar class="bar-stable">
+	<h1 class="title">Select Creature</h1>
+	<div class="buttons">
+    		<a href="#/main"><button class="button" >Back</button></a>
+  	</div>
+</ion-header-bar>
+<ion-content class="padding">
+	<!--<img src="resources/DoP057.jpg" style="width:100%; height:auto;" alt="">-->
+	<ion-list>
+		<ion-item>
+			<ion-item class="item-avatar" ng-repeat="card in cards" ui-sref='CardDetail({id:idplayer,index: $index})' >
+			<img ng-src="src/{{card.ImageFile}}.jpg" alt="">
+			<h2>{{card.Name}}-{{card.Tribe}}</h2>
+			<span class="stat-energy">E:{{card.Energy}}</span>
+			<span class="stat-courage">C:{{card.Courage}}</span>
+			<span class="stat-power">P:{{card.Power}}</span>
+			<span class="stat-wisdom">W:{{card.Wisdom}}</span>
+			<span class="stat-speed">S:{{card.Speed}}</span>
+			<span class="stat-mugicability">MC:{{card.MugicAbility}}</span>
+			
+		</ion-item>
+	</ion-list>
+</ion-content>
