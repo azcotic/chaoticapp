@@ -1,10 +1,17 @@
 app.controller("SelectController", function($stateParams,cardService, $scope,$state){
 	console.log($stateParams.id);
 	$scope.idplayer =$stateParams.id;
-	cardService.getCards().then(function(cards){
+	var flag=0;
+	
+	if(flag==0){
+		cardService.getCards().then(function(cards){
+			$scope.cards = cards.data;
+			var flag=1;
+			//console.log(cards.data);
+		})
+	}else{
 		$scope.cards = cards.data;
-		//console.log(cards.data);
-	})
+	}
 });
 
 app.controller("CardDetailController", function($scope, $stateParams, cardService,PlayersInfo){
@@ -12,7 +19,7 @@ app.controller("CardDetailController", function($scope, $stateParams, cardServic
 	var idplayer = $stateParams.id;
 	$scope.idplayer = idplayer;
 	$scope.indexcreature = index;
-	//console.log("El id de la criatura antes de dar click es: "+index);
+	console.log("El id de la criatura antes de dar click es: "+index);
 	//console.log(cardService.getCard(index));
 	cardService.getCard(index).then(function(cards){
 	console.log($scope.cards=cards.data[index]);	
@@ -28,13 +35,13 @@ app.controller("CardDetailController", function($scope, $stateParams, cardServic
 app.factory('PlayersInfo',function(){
 	var playersData = [{
 		'id':0,
-		'playername':'Arturo',
+		'playername':'Player1',
 		'creature':'',
 		'creatureid':'',
 		'img':'cardback'
 		},{
 		'id':1,
-		'playername':'Nika',
+		'playername':'Player2',
 		'creature':'',
 		'creatureid':'',
 		'img':'cardback'

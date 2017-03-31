@@ -1,14 +1,21 @@
 <ion-header-bar class="bar-stable">
 	<h1 class="title">Select Creature</h1>
+
 	<div class="buttons">
     		<a href="#/main"><button class="button" >Back</button></a>
   	</div>
 </ion-header-bar>
+
 <ion-content class="padding">
-	<!--<img src="resources/DoP057.jpg" style="width:100%; height:auto;" alt="">-->
+	<div class="list list-inset">
+	  <label class="item item-input">
+	    <i class="icon fa fa-search fa-fw placeholder-icon"></i>
+	    <input type="text" placeholder="Search" ng-model="search">
+	  </label>
+</div>
 	<ion-list>
 		<ion-item>
-			<ion-item class="item-avatar" ng-repeat="card in cards" ui-sref='CardDetail({id:idplayer,index: $index})' >
+			<ion-item class="item-avatar" ng-repeat="card in cards | filter:search" ui-sref='CardDetail({id:idplayer,index: cards.indexOf(card)})' >
 			<img ng-src="src/{{card.ImageFile}}.jpg" alt="">
 			<h2>{{card.Name}}-{{card.Tribe}}</h2>
 			<span class="stat-energy">E:{{card.Energy}}</span>
