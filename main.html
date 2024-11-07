@@ -1,16 +1,34 @@
+<div class="splash-screen" ng-if="splash" ng-click="removeSplash()">
+	<!-- <h1>Welcome to the Game</h1> -->
+</div>
 <ion-header-bar class="bar-stable">
-		<h1 class="title">Bienvenido</h1>
+		<h1 class="title">Chaotic Demo App</h1>
 		<div class="buttons">
-    		<a href="#/"><button class="button" >Exit</button></a>
+    		<!-- <a href="#/"><button class="button" >Exit</button></a> -->
   		</div>
 	</ion-header-bar>
 	<ion-content class="padding">
-	Seleciona una criatura 
-	<ion-item class="item-avatar" ng-repeat="player in players" ui-sref='Select({id: $index})' >
-			<img ng-src="src/{{player.img}}.jpg" alt="">
+	<!-- <ion-item class="item-avatar" ng-repeat="player in players" ui-sref='Select({id: $index})' >
+			<img ng-src="src/minified/{{player.img}}.jpg" alt="">
 			<h2>{{player.playername}}</h2>
 			<span>{{player.creature}}</span>
+		</ion-item> -->
+		<ion-item class="half-height" ui-sref='Select({id: 0})'>
+			<img ng-src="src/cards/{{players[0].img}}.jpg" alt="">
+			<h2>{{players[0].playername}}</h2>
+			<span>{{players[0].creature}}</span>
 		</ion-item>
+			<div class="vs-wrapper">
+				<img ng-src="src/static/vs.png" alt="" class="vs-element" style="">
+			</div>
+			<!-- Un elemento que diga VS  -->
+			
+		
+        <ion-item class="half-height" ui-sref='Select({id: 1})'>
+            <img ng-src="src/cards/{{players[1].img}}.jpg" alt="">
+            <h2>{{players[1].playername}}</h2>
+            <span>{{players[1].creature}}</span>
+        </ion-item>
 </ion-content>
 <ion-footer-bar class="bar-calm" align-title="right">	
   <div class="buttons">

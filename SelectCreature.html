@@ -16,7 +16,7 @@
 	<ion-list>
 		<ion-item>
 			<ion-item class="item-avatar" ng-repeat="card in cards | filter:search" ui-sref='CardDetail({id:idplayer,index: cards.indexOf(card)})' >
-			<img ng-src="src/minified/{{card.ImageFile}}.jpg" alt="">
+			<img ng-src="src/minified/{{card.ImageFile}}.jpg" alt="" loading="lazy">
 			<h2>{{card.Name}}-{{card.Tribe}}</h2>
 			<span class="stat-energy">E:{{card.Energy}}</span>
 			<span class="stat-courage">C:{{card.Courage}}</span>
@@ -24,7 +24,6 @@
 			<span class="stat-wisdom">W:{{card.Wisdom}}</span>
 			<span class="stat-speed">S:{{card.Speed}}</span>
 			<span class="stat-mugicability">MC:{{card.MugicAbility}}</span>
-			
 		</ion-item>
 	</ion-list>
 </ion-content>
