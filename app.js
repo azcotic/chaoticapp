@@ -18,6 +18,11 @@ app.config(function($stateProvider,$urlRouterProvider){
 		templateUrl: 'Duel.html',
 		controller: 'DuelController'
 	})
+/* 	.state('Duel2', {
+		url:'/Duel2',
+		templateUrl: 'Duel2.html',
+		controller: 'DuelController'
+	}) */
 	.state('CardDetail',{
 		url:'CardDetail/:id/:index',
 		templateUrl:'CardDetail.html',

@@ -14,9 +14,11 @@
 			<span>{{player.creature}}</span>
 		</ion-item> -->
 		<ion-item class="half-height" ui-sref='Select({id: 0})'>
-			<img ng-src="src/cards/{{players[0].img}}.jpg" alt="">
 			<h2>{{players[0].playername}}</h2>
-			<span>{{players[0].creature}}</span>
+			<div>{{players[0].creature}}</div>
+			<img ng-src="src/cards/{{players[0].img}}.jpg" alt="">
+			
+			
 		</ion-item>
 			<div class="vs-wrapper">
 				<img ng-src="src/static/vs.png" alt="" class="vs-element" style="">
@@ -30,8 +32,13 @@
             <span>{{players[1].creature}}</span>
         </ion-item>
 </ion-content>
-<ion-footer-bar class="bar-calm" align-title="right">	
-  <div class="buttons">
+<!--<ion-footer-bar class="bar-calm" align-title="right">	
+   <div class="buttons">
     <a href="#/Duel"><button class="button right-button" ng-disabled="!((players[0].creature)&&(players[1].creature))" ng-click="startDuel()">Duel</button></a>
-  </div>
-</ion-footer-bar>
+  </div> 
+  
+</ion-footer-bar>-->
+<a href="#/Duel">><div class="button-fab-bottom-right"  ng-hide="!((players[0].creature)&&(players[1].creature))" ng-click="startDuel()">
+	<img src="src/static/sword.png" style="filter: invert(100%); width:56px;height:56px">
+</div></a>
+<!-- ng-disabled="!((players[0].creature)&&(players[1].creature))" -->
